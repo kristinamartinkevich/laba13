@@ -1,0 +1,380 @@
+using System;
+using System.IO;
+
+class DirAppend
+{
+	public static void Main()
+	{
+        //Log
+		using (StreamWriter w = File.AppendText("log.txt"))
+		{
+			MKALog("Test1", w);
+			MKALog("Test2", w);
+		}
+
+		using (StreamReader r = File.OpenText("log.txt"))
+		{
+			DumpMKALog(r);
+		}
+
+
+		//diskinfo: свободное место на диске
+		//AvailableFreeSpace    
+		//Указывает объем доступного свободного места на диске в байтах.
+
+		DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+
+
+
+		//diskinfo файловая система
+		//DriveFormat   
+		//Получает имя файловой системы,
+
+		DriveInfo[] allDrives2 = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives2)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+		//Name  
+		//Возвращает имя диска, например C:\.
+
+
+		DriveInfo[] allDrives3 = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives3)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+
+
+		//TotalFreeSpace
+		//Возвращает общий объем свободного места, доступного на диске, в байтах.
+
+		DriveInfo[] allDrives4 = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives4)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+
+		//TotalSize
+		//Возвращает общий размер места для хранения на диске в байтах.
+
+		DriveInfo[] allDrives5 = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives5)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+
+
+		//VolumeLabel
+		//Возвращает или задает метку тома диска.
+
+		DriveInfo[] allDrives6 = DriveInfo.GetDrives();
+
+		foreach (DriveInfo d in allDrives6)
+		{
+			Console.WriteLine("Drive {0}", d.Name);
+			Console.WriteLine("  Drive type: {0}", d.DriveType);
+			if (d.IsReady == true)
+			{
+				Console.WriteLine("  Volume label: {0}", d.VolumeLabel);
+				Console.WriteLine("  File system: {0}", d.DriveFormat);
+				Console.WriteLine(
+					"  Available space to current user:{0, 15} bytes",
+					d.AvailableFreeSpace);
+
+				Console.WriteLine(
+					"  Total available space:          {0, 15} bytes",
+					d.TotalFreeSpace);
+
+				Console.WriteLine(
+					"  Total size of drive:            {0, 15} bytes ",
+					d.TotalSize);
+			}
+		}
+
+
+
+
+
+		//file info : 
+
+		//DirectoryName
+		//Получает строку, представляющую полный путь к каталогу.
+
+		string fileName = @"C:\TMP\log.txt";
+		FileInfo fileInfo = new FileInfo(fileName);
+		if (!fileInfo.Exists)
+		{
+			return;
+		}
+
+		Console.WriteLine("{0} has a directoryName of {1}",
+			fileName, fileInfo.DirectoryName);
+
+
+
+
+		//  Extension   
+		//Получает строку, содержащую расширение файла.
+		string goodFileName = @"/Users/mac/Desktop/uni/2 курс/ООП/12 лаба/myfile.com.extension";
+		string badFileName = @"/Users/mac/Desktop/uni/2 курс/ООП/12 лабаmydir";
+		string result;
+
+		result = Path.ChangeExtension(goodFileName, ".old");
+		Console.WriteLine("ChangeExtension({0}, '.old') returns '{1}'",
+			goodFileName, result);
+
+		result = Path.ChangeExtension(goodFileName, "");
+		Console.WriteLine("ChangeExtension({0}, '') returns '{1}'",
+			goodFileName, result);
+
+		result = Path.ChangeExtension(badFileName, ".old");
+		Console.WriteLine("ChangeExtension({0}, '.old') returns '{1}'",
+			badFileName, result);
+
+
+
+
+		//Length    
+		//Получает размер текущего файла в байтах.
+
+
+		// Make a reference to a directory.
+		DirectoryInfo di = new DirectoryInfo("c:\\");
+		// Get a reference to each file in that directory.
+		FileInfo[] fiArr = di.GetFiles();
+		// Display the names and sizes of the files.
+		Console.WriteLine("The directory {0} contains the following files:", di.Name);
+		foreach (FileInfo f in fiArr)
+			Console.WriteLine("The size of {0} is {1} bytes.", f.Name, f.Length);
+
+
+
+
+
+		//Name
+		//Возвращает имя файла.
+
+		// Create a reference to the current directory.
+		DirectoryInfo di2 = new DirectoryInfo(Environment.CurrentDirectory);
+		// Create an array representing the files in the current directory.
+		FileInfo[] fi = di2.GetFiles();
+		Console.WriteLine("The following files exist in the current directory:");
+		// Print out the names of the files in the current directory.
+		foreach (FileInfo fiTemp in fi)
+			Console.WriteLine(fiTemp.Name);
+
+
+
+
+
+		//количество файлов
+        // начинающихся на с
+
+		try
+		{
+			// Only get files that begin with the letter "c."
+			string[] dirs = Directory.GetFiles(@"c:\", "c*");
+			Console.WriteLine("The number of files starting with c is {0}.", dirs.Length);
+			foreach (string dir in dirs)
+			{
+				Console.WriteLine(dir);
+			}
+		}
+		catch (Exception e)
+		{
+			Console.WriteLine("The process failed: {0}", e.ToString());
+		}
+
+
+
+
+
+		//GetDirectories()    
+		//Возвращает подкаталоги текущего каталога.
+
+		// Make a reference to a directory.
+		DirectoryInfo di = new DirectoryInfo("c:\\");
+
+		// Get a reference to each directory in that directory.
+		DirectoryInfo[] diArr = di.GetDirectories();
+
+		// Display the names of the directories.
+		foreach (DirectoryInfo dri in diArr)
+			Console.WriteLine(dri.Name);
+
+
+
+
+		//Parent    
+		//Получает родительский каталог заданного подкаталога.
+
+		// Make a reference to a directory.
+		DirectoryInfo di = new DirectoryInfo("TempDir");
+
+		// Create the directory only if it does not already exist.
+		if (di.Exists == false)
+			di.Create();
+
+		// Create a subdirectory in the directory just created.
+		DirectoryInfo dis = di.CreateSubdirectory("SubDir");
+
+		// Get a reference to the parent directory of the subdirectory you just made.
+		DirectoryInfo parentDir = dis.Parent;
+		Console.WriteLine("The parent directory of '{0}' is '{1}'", dis.Name, parentDir.Name);
+
+		// Delete the parent directory.
+		di.Delete(true);
+
+
+        //filemanager
+	}
+
+
+
+
+    //Log
+
+	public static void MKALog(string logMessage, TextWriter w)
+	{
+		w.Write("\r\nLog Entry : ");
+		w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
+			DateTime.Now.ToLongDateString());
+		w.WriteLine("  :");
+		w.WriteLine("  :{0}", logMessage);
+		w.WriteLine("-------------------------------");
+	}
+
+	public static void DumpMKALog(StreamReader r)
+	{
+		string line;
+		while ((line = r.ReadLine()) != null)
+		{
+			Console.WriteLine(line);
+		}
+	}
+
+	//время создания
+	//Получает полный путь к каталогу или файлу.
+	static void DisplayFileSystemInfoAttributes(FileSystemInfo fsi)
+	{
+		//  Assume that this entry is a file.
+		string entryType = "File";
+
+		// Determine if entry is really a directory
+		if ((fsi.Attributes & FileAttributes.Directory) == FileAttributes.Directory)
+		{
+			entryType = "Directory";
+		}
+		//  Show this entry's type, name, and creation date.
+		Console.WriteLine("{0} entry {1} was created on {2:D}", entryType, fsi.FullName, fsi.CreationTime);
+
+
+	}
+	
+
+}
